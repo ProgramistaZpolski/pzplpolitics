@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+	
+# TEAM
+	
+		Piotr Badełek -- Author -- @ProgramistaZ
+
+# THANKS
+
+		Kasztan Corporation / Kasztan Space - za hostowanie, pomysly, i wiele innych rzeczy
+	
+# TECHNOLOGY COLOPHON
+	
+	HTML5, CSS3, JS
