@@ -180,8 +180,8 @@ function nextQuestion(obj) {
 		let wynik2 = (Math.round(state.authright) + Math.round(state.libright)) - (Math.round(state.libleft) + Math.round(state.libright));
 		wynik1 -= Math.round(state.center / 4);
 		wynik2 -= Math.round(state.center / 4);
-		Sentry.captureMessage(`Wynik 1: ${258 + (wynik2 * 100)}  Wynik 2: ${278 + (wynik1 * 100)}`);
-		render(258 + (wynik2 * 100), 278 + (wynik1 * 100));
+		Sentry.captureMessage(`Wynik 1: ${283 + (wynik2 * 100)}  Wynik 2: ${303 + (wynik1 * 100)}`);
+		render(283 + (wynik2 * 100), 303 + (wynik1 * 100));
 	};
 };
 
@@ -191,7 +191,7 @@ function render(val1, val2) {
 	let img1 = new Image();
 
 	img1.onload = function () {
-		ctx.drawImage(img1, 0, 0);
+		ctx.drawImage(img1, 25, 25);
 		setTimeout(() => {
 			ctx.drawImage(h("img").getEl(), val1, val2);
 		}, 250);
