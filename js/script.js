@@ -4,7 +4,7 @@ const devMode = true;
 
 const pytania = [
 	{
-		"name": "Czy kukanq to kasztan",
+		"name": "kukanq to kasztan",
 		"libleft": 0,
 		"libright": 0.2,
 		"authright": 0.1,
@@ -12,7 +12,7 @@ const pytania = [
 		"center": 0.5
 	},
 	{
-		"name": "czy pzpla należy wywieźć na syberię",
+		"name": "pzpla należy wywieźć na syberię",
 		"libleft": 0,
 		"libright": 0.1,
 		"authright": 0.4,
@@ -20,7 +20,7 @@ const pytania = [
 		"center": 0.1
 	},
 	{
-		"name": "Czy telefony to zło",
+		"name": "Telefony to zło",
 		"libleft": 0,
 		"libright": 0.1,
 		"authright": 0.4,
@@ -28,7 +28,7 @@ const pytania = [
 		"center": 0.1
 	},
 	{
-		"name": "czy spotify yt music itunes i inne to zło?",
+		"name": "Spotify, YouTube Music, iTunes i inne platformy do odtwarzania muzyki to zło",
 		"libleft": 0.1,
 		"libright": 0,
 		"authright": 0.4,
@@ -36,7 +36,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Czy davinci to kasztan?",
+		"name": "DaVinci to kasztan",
 		"libleft": 0.4,
 		"libright": 0,
 		"authright": 0,
@@ -44,7 +44,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Czy pzpl to kasztan?",
+		"name": "pzpl to kasztan",
 		"libleft": 0.4,
 		"libright": 0,
 		"authright": 0.1,
@@ -52,7 +52,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Czy firmy powinny mieć prawo bloatować systemy?",
+		"name": "Producenci komputerów, laptopów itp. powinni mieć prawo bloatować systemy",
 		"libleft": 0.1,
 		"libright": 0.5,
 		"authright": 0.4,
@@ -60,7 +60,7 @@ const pytania = [
 		"center": 0.2
 	},
 	{
-		"name": "Czy można kupować dyski 5tb do prac domowych?",
+		"name": "Można kupować dyski 5tb do prac domowych",
 		"libleft": 0.2,
 		"libright": 0.8,
 		"authright": 0.5,
@@ -68,7 +68,7 @@ const pytania = [
 		"center": 0.3
 	},
 	{
-		"name": "Czy śluby dla homoseksualnych kasztanów powinny być dostępne?",
+		"name": "Śluby dla homoseksualnych kasztanów powinny być dostępne",
 		"libleft": 0.9,
 		"libright": 0.7,
 		"authright": 0,
@@ -76,7 +76,7 @@ const pytania = [
 		"center": 0.5
 	},
 	{
-		"name": "Czy kukanq powinien dostać bana na infinity developers?",
+		"name": "kukanq powinien dostać bana na infinity developers",
 		"libleft": 0.1,
 		"libright": 0.2,
 		"authright": 0.6,
@@ -84,7 +84,7 @@ const pytania = [
 		"center": 0.1
 	},
 	{
-		"name": "Czy lisku powinien mieć prawo do wkurzania swoich sąsiadów?",
+		"name": "liskqu powinien mieć prawo do wkurzania swoich sąsiadów?",
 		"libleft": 0.3,
 		"libright": 0.7,
 		"authright": 0.4,
@@ -94,7 +94,7 @@ const pytania = [
 		// btw czemu w kod patrzysz
 	},
 	{
-		"name": "Czy enderk może streamować ze sklepu?",
+		"name": "EnderK ma prawo streamować ze sklepu",
 		"libleft": 0.5,
 		"libright": 0.4,
 		"authright": 0.4,
@@ -110,7 +110,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Czy albicla to dobro?",
+		"name": "Albicla to dobro",
 		"libleft": 0,
 		"libright": 0.1,
 		"authright": 0.2,
@@ -118,7 +118,7 @@ const pytania = [
 		"center": 0.5
 	},
 	{
-		"name": "Czy sieciuchy dobre a sieciaki złe?",
+		"name": "Sieciuchy są dobre, a sieciaki złe",
 		"libleft": 0.1,
 		"libright": 0,
 		"authright": 0.1,
@@ -126,7 +126,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Czy sieciaki powinny mieszkać pod wodą w australii?",
+		"name": "Sieciaki powinny mieszkać pod wodą w australii",
 		"libleft": 0,
 		"libright": 0.7,
 		"authright": 0.4,
