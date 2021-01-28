@@ -176,3 +176,27 @@ let hQuery = function (selector) {
 };
 
 const h = hQuery;
+
+document.onkeyup = function (e) {
+    if (e.shiftKey && e.key == "D") {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("pzplUI_mode", "dark");
+        } else {
+            localStorage.setItem("pzplUI_mode", "light");
+        }
+    };
+};
+
+if (localStorage.getItem("pzplUI_mode") == "dark") {
+    document.body.classList.add("dark-mode");
+};
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("pzplUI_mode", "dark");
+    } else {
+        localStorage.setItem("pzplUI_mode", "light");
+    }
+};

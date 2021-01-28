@@ -37,9 +37,18 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<header>
-		<h1 class="d2">Kasztan Politics <span class="badge badge-normal">Beta 2</span></h1>
+		<h1 class="d2">Kasztan Politics <span class="badge badge-normal anim-hover-grow">Beta 3</span></h1>
 	</header>
 	<main>
+		<div class="alert alert-error text-dark">
+			<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="#55131a"
+				class="float-start" viewBox="0 0 16 16">
+				<path
+					d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+			</svg>
+			<span class="h5">RADYKAŁ ALERT</span><br><span>Uwaga! Potrzebujesz psychologa. Masz takie poglądy
+				polityczne że nie zmieściły się na skali.<br> Twoje wyniki zostały znormalizowane.</span>
+		</div>
 		<div id="questions">
 			<h2>{{ Pytanie }}</h2>
 			<button class="btn btn-success btn-lg" onclick="nextQuestion(1);">Zgadzam
@@ -54,10 +63,12 @@
 					href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
 			</p>
 		</canvas>
-		<button class="btn btn-error" data-show="finish" onclick="rerender();">Kropki nie ma, zrenderuj jeszcze raz</button>
+		<button class="btn btn-error" data-show="finish" onclick="rerender();">Kropki nie ma, zrenderuj jeszcze
+			raz</button>
 	</main>
-	<img src="./dot.png" alt="kropka" decoding="async" style="opacity: 0;" aria-hidden="true">
+	<img src="./dot.png" alt="kropka" decoding="async" style="opacity: 0;" aria-hidden="true"><br><br>
 	<footer>
+		<button class="btn btn-info" onclick="toggleDarkMode();">Ciemny motyw aby oczy nie umierały</button><br>
 		By <a href="https://programistazpolski.ct8.pl/pl/?projekt=kasztanPolitics" target="_blank"
 			rel="noopener noreferrer" title="Zatrudnij mnie za darmo pls">pzpl</a>, made for Kasztan Space
 	</footer>

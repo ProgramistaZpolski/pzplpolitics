@@ -4,7 +4,7 @@ const devMode = true;
 
 const pytania = [
 	{
-		"name": "kukanq to kasztan",
+		"name": "Czy kukanq to kasztan",
 		"libleft": 0,
 		"libright": 0.2,
 		"authright": 0.1,
@@ -12,7 +12,7 @@ const pytania = [
 		"center": 0.5
 	},
 	{
-		"name": "pzpla należy wywieźć na syberię",
+		"name": "czy pzpla należy wywieźć na syberię",
 		"libleft": 0,
 		"libright": 0.1,
 		"authright": 0.4,
@@ -20,7 +20,7 @@ const pytania = [
 		"center": 0.1
 	},
 	{
-		"name": "Telefony to zło",
+		"name": "Czy telefony to zło",
 		"libleft": 0,
 		"libright": 0.1,
 		"authright": 0.4,
@@ -28,7 +28,7 @@ const pytania = [
 		"center": 0.1
 	},
 	{
-		"name": "Spotify, YouTube Music, iTunes i inne platformy do odtwarzania muzyki to zło",
+		"name": "czy spotify yt music itunes i inne to zło?",
 		"libleft": 0.1,
 		"libright": 0,
 		"authright": 0.4,
@@ -36,7 +36,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "DaVinci to kasztan",
+		"name": "Czy davinci to kasztan?",
 		"libleft": 0.4,
 		"libright": 0,
 		"authright": 0,
@@ -44,7 +44,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "pzpl to kasztan",
+		"name": "Czy pzpl to kasztan?",
 		"libleft": 0.4,
 		"libright": 0,
 		"authright": 0.1,
@@ -52,7 +52,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Producenci komputerów, laptopów itp. powinni mieć prawo bloatować systemy",
+		"name": "Czy firmy powinny mieć prawo bloatować systemy?",
 		"libleft": 0.1,
 		"libright": 0.5,
 		"authright": 0.4,
@@ -60,7 +60,7 @@ const pytania = [
 		"center": 0.2
 	},
 	{
-		"name": "Można kupować dyski 5tb do prac domowych",
+		"name": "Czy można kupować dyski 5tb do prac domowych?",
 		"libleft": 0.2,
 		"libright": 0.8,
 		"authright": 0.5,
@@ -68,7 +68,7 @@ const pytania = [
 		"center": 0.3
 	},
 	{
-		"name": "Śluby dla homoseksualnych kasztanów powinny być dostępne",
+		"name": "Czy śluby dla homoseksualnych kasztanów powinny być dostępne?",
 		"libleft": 0.9,
 		"libright": 0.7,
 		"authright": 0,
@@ -76,7 +76,7 @@ const pytania = [
 		"center": 0.5
 	},
 	{
-		"name": "kukanq powinien dostać bana na infinity developers",
+		"name": "Czy kukanq powinien dostać bana na infinity developers?",
 		"libleft": 0.1,
 		"libright": 0.2,
 		"authright": 0.6,
@@ -84,7 +84,7 @@ const pytania = [
 		"center": 0.1
 	},
 	{
-		"name": "liskqu powinien mieć prawo do wkurzania swoich sąsiadów?",
+		"name": "Czy lisku powinien mieć prawo do wkurzania swoich sąsiadów?",
 		"libleft": 0.3,
 		"libright": 0.7,
 		"authright": 0.4,
@@ -94,7 +94,7 @@ const pytania = [
 		// btw czemu w kod patrzysz
 	},
 	{
-		"name": "EnderK ma prawo streamować ze sklepu",
+		"name": "Czy enderk może streamować ze sklepu?",
 		"libleft": 0.5,
 		"libright": 0.4,
 		"authright": 0.4,
@@ -110,7 +110,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Albicla to dobro",
+		"name": "Czy albicla to dobro?",
 		"libleft": 0,
 		"libright": 0.1,
 		"authright": 0.2,
@@ -118,7 +118,7 @@ const pytania = [
 		"center": 0.5
 	},
 	{
-		"name": "Sieciuchy są dobre, a sieciaki złe",
+		"name": "Czy sieciuchy dobre a sieciaki złe?",
 		"libleft": 0.1,
 		"libright": 0,
 		"authright": 0.1,
@@ -126,7 +126,7 @@ const pytania = [
 		"center": 0
 	},
 	{
-		"name": "Sieciaki powinny mieszkać pod wodą w australii",
+		"name": "Czy sieciaki powinny mieszkać pod wodą w australii?",
 		"libleft": 0,
 		"libright": 0.7,
 		"authright": 0.4,
@@ -176,25 +176,48 @@ function nextQuestion(obj) {
 		h(".btn-error").css("display", "none");
 		h(".btn-success").css("display", "none");
 		h("canvas").css("display", "block");
+		h("[data-show]").css("display", "block");
 		let wynik1 = (Math.round(state.libleft) + Math.round(state.libright)) - (Math.round(state.authright) + Math.round(state.authleft));
 		let wynik2 = (Math.round(state.authright) + Math.round(state.libright)) - (Math.round(state.libleft) + Math.round(state.libright));
 		wynik1 -= Math.round(state.center / 4);
 		wynik2 -= Math.round(state.center / 4);
-		Sentry.captureMessage(`Wynik 1: ${283 + (wynik2 * 100)}  Wynik 2: ${303 + (wynik1 * 100)}`);
-		render(283 + (wynik2 * 100), 303 + (wynik1 * 100));
+		Sentry.captureMessage(`Wynik 1: ${258 + (wynik2 * 100)}  Wynik 2: ${278 + (wynik1 * 100)}`);
+		if (258 + (wynik2 * 100) > 510 || 278 + (wynik1 * 100) > 510) {
+			h(".alert").css("display", "block");
+			render(510, 510);
+		} else if (258 + (wynik2 * 100) < -510 || 278 + (wynik1 * 100) < -510) {
+			h(".alert").css("display", "block");
+			render(-510, -510);
+		} else {
+			render(258 + (wynik2 * 100), 278 + (wynik1 * 100));
+		}
 	};
 };
 
-function render(val1, val2) {
+function rerender() {
 	let canv = h("canvas").getEl();
 	let ctx = canv.getContext("2d");
+	let wynik1 = (Math.round(state.libleft) + Math.round(state.libright)) - (Math.round(state.authright) + Math.round(state.authleft));
+	let wynik2 = (Math.round(state.authright) + Math.round(state.libright)) - (Math.round(state.libleft) + Math.round(state.libright));
+	wynik1 -= Math.round(state.center / 4);
+	wynik2 -= Math.round(state.center / 4);
+	let img2 = new Image();
+
+	img2.onload = function () {
+		ctx.drawImage(img2, 258 + (wynik2 * 100), 278 + (wynik1 * 100));
+	};
+
+	img2.src = "./dot.png";
+};
+
+function render(val1, val2) {
 	let img1 = new Image();
 
 	img1.onload = function () {
-		ctx.drawImage(img1, 25, 25);
-		setTimeout(() => {
-			ctx.drawImage(h("img").getEl(), val1, val2);
-		}, 250);
+		let canv = h("canvas").getEl();
+		let ctx = canv.getContext("2d");
+		ctx.drawImage(img1, 0, 0);
+		ctx.drawImage(h("img").getEl(), val1, val2);
 	};
 
 	img1.src = "./compass.svg";
