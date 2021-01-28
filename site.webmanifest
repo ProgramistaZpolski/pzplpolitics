@@ -1,0 +1,12 @@
+{
+	"short_name": "Kasztan Politics",
+	"name": "Kasztan Politics",
+	"icons": [{
+		"src": "favicon.png",
+		"type": "image/png",
+		"sizes": "192x192"
+	}],
+	"start_url": "/?installed=yes",
+	"background_color": "#fafafa",
+	"theme_color": "#fafafa"
+}

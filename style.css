@@ -1273,9 +1273,6 @@ canvas {
 	will-change: contents; /* omijanie tzw. layout trashingu - wincyj fps */
 }
 
-footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100vw;
+[data-show] {
+	display: none;
 }
