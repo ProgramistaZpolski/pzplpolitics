@@ -1,7 +1,5 @@
 "use strict";
 
-const devMode = true;
-
 const pytania = [
 	{
 		"name": "Czy kukanq to kasztan",
@@ -223,6 +221,4 @@ function render(val1, val2) {
 	img1.src = "./compass.svg";
 };
 
-if (devMode) {
-	window.onload = start;
-};
+window.onload = start;
