@@ -1,14 +1,15 @@
 "use strict";
 
+
 const pytania = [
-	{
+	/*{
 		"name": "kukanq to kasztan",
 		"libleft": 0,
 		"libright": 0.2,
 		"authright": 0.1,
 		"authleft": 0.3,
 		"center": 0.5
-	},
+	},*/
 	{
 		"name": "pzpla należy wywieźć na syberię",
 		"libleft": 0,
@@ -73,7 +74,7 @@ const pytania = [
 		"authleft": 0.3,
 		"center": 0.5
 	},
-	{
+	/*{
 		"name": "kukanq powinien dostać bana na infinity developers",
 		"libleft": 0.1,
 		"libright": 0.2,
@@ -90,7 +91,7 @@ const pytania = [
 		"center": 0
 		// https://youtu.be/Xi-S7ou6W6Y
 		// btw czemu w kod patrzysz
-	},
+	},*/
 	{
 		"name": "EnderK ma prawo streamować ze sklepu",
 		"libleft": 0.5,
@@ -130,6 +131,38 @@ const pytania = [
 		"authright": 0.4,
 		"authleft": 0.1,
 		"center": 0.2
+	},
+	{
+		"name": "h to najlepsza litera",
+		"libleft": 0.5,
+		"libright": 0.5,
+		"authright": 0.3,
+		"authleft": 0.2,
+		"center": 1
+	},
+	{
+		"name": "Za zabijanie chickenów powinno się karać",
+		"libleft": 0.5,
+		"libright": 0,
+		"authright": 0.1,
+		"authleft": 0.8,
+		"center": 0
+	},
+	{
+		"name": "Powinno się zabronić pisania \"wirusów\" w batchu",
+		"libleft": 0.5,
+		"libright": 0,
+		"authright": 0.1,
+		"authleft": 0.8,
+		"center": 0.1
+	},
+	{
+		"name": "Władza na serwerze EnderK House powinna być sprawowana przez The Vision, a EnderK powinien być tylko maskotką",
+		"libleft": 0.2,
+		"libright": 0.1,
+		"authright": 0.8,
+		"authleft": 1,
+		"center": 0.5
 	}
 ];
 
@@ -139,7 +172,8 @@ let state = {
 	"libright": 0,
 	"authleft": 0,
 	"authright": 0,
-	"center": 0
+	"center": 0,
+	"anwsers": []
 };
 
 function start() {
@@ -154,6 +188,7 @@ function nextQuestion(obj) {
 		state.authleft += pytania[state.question].authleft;
 		state.authright += pytania[state.question].authright;
 		state.center += pytania[state.question].center;
+		state.anwsers.push(obj);
 	} else if (obj === 0) {
 		// użytkownik nie zgadza się
 		state.libleft -= pytania[state.question].libleft;
@@ -161,6 +196,9 @@ function nextQuestion(obj) {
 		state.authleft -= pytania[state.question].authleft;
 		state.authright -= pytania[state.question].authright;
 		state.center -= pytania[state.question].center;
+		state.anwsers.push(obj);
+	} else {
+		state.anwsers.push("h");
 	};
 	state.question++;
 	if (pytania[state.question]) {
@@ -175,19 +213,20 @@ function nextQuestion(obj) {
 		h(".btn-success").css("display", "none");
 		h("canvas").css("display", "block");
 		h("[data-show]").css("display", "block");
+		h("#shareURL").css("display", "block");
+		h("#shareURL span").text(`http://kasztan.space/kasztanpolitics/share.php?a=${state.anwsers.toString().replaceAll(",", "")}`);
 		let wynik1 = (Math.round(state.libleft) + Math.round(state.libright)) - (Math.round(state.authright) + Math.round(state.authleft));
 		let wynik2 = (Math.round(state.authright) + Math.round(state.libright)) - (Math.round(state.libleft) + Math.round(state.libright));
-		wynik1 -= Math.round(state.center / 4);
-		wynik2 -= Math.round(state.center / 4);
-		Sentry.captureMessage(`Wynik 1: ${258 + (wynik2 * 100)}  Wynik 2: ${278 + (wynik1 * 100)}`);
-		if (258 + (wynik2 * 100) > 510 || 278 + (wynik1 * 100) > 510) {
+		wynik1 -= Math.round(state.center / 5);
+		wynik2 -= Math.round(state.center / 5);
+		if (258 + (wynik2 * 65) > 510 || 278 + (wynik1 * 65) > 510) {
 			h(".alert").css("display", "block");
 			render(510, 510);
-		} else if (258 + (wynik2 * 100) < -510 || 278 + (wynik1 * 100) < -510) {
+		} else if (258 + (wynik2 * 65) < -510 || 278 + (wynik1 * 65) < -510) {
 			h(".alert").css("display", "block");
 			render(-510, -510);
 		} else {
-			render(258 + (wynik2 * 100), 278 + (wynik1 * 100));
+			render(258 + (wynik2 * 65), 278 + (wynik1 * 65));
 		}
 	};
 };
@@ -197,12 +236,12 @@ function rerender() {
 	let ctx = canv.getContext("2d");
 	let wynik1 = (Math.round(state.libleft) + Math.round(state.libright)) - (Math.round(state.authright) + Math.round(state.authleft));
 	let wynik2 = (Math.round(state.authright) + Math.round(state.libright)) - (Math.round(state.libleft) + Math.round(state.libright));
-	wynik1 -= Math.round(state.center / 4);
-	wynik2 -= Math.round(state.center / 4);
+	wynik1 -= Math.round(state.center / 5);
+	wynik2 -= Math.round(state.center / 5);
 	let img2 = new Image();
 
 	img2.onload = function () {
-		ctx.drawImage(img2, 258 + (wynik2 * 100), 278 + (wynik1 * 100));
+		ctx.drawImage(img2, 258 + (wynik2 * 65), 278 + (wynik1 * 65));
 	};
 
 	img2.src = "./dot.png";
@@ -222,3 +261,5 @@ function render(val1, val2) {
 };
 
 window.onload = start;
+
+h("h1").on("click", () => { window.location.reload(); });

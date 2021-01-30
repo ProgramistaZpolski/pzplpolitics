@@ -41,42 +41,49 @@
 		<h1 class="d2 anim-hover-grow">Kasztan Politics <span class="badge badge-normal">Feature Test 1</span></h1>
 	</header>
 	<main>
-		<div class="alert alert-error text-dark">
-			<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="#55131a"
-				class="float-start" viewBox="0 0 16 16">
-				<path
-					d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-			</svg>
-			<span class="h5">RADYKAŁ ALERT</span><br><span>Uwaga! Potrzebujesz psychologa. Masz takie poglądy
-				polityczne że nie zmieściły się na skali.<br> Twoje wyniki zostały znormalizowane.</span>
-		</div>
-		<div id="questions">
-			<h2>{{ Pytanie }}</h2>
-			<button class="btn btn-success btn-lg" onclick="nextQuestion(1);">Zgadzam
-				się</button>
-			<button class="btn btn-secondary btn-lg" onclick="nextQuestion(0.5);">Nie mam
-				opinii</button>
-			<button class="btn btn-error btn-lg" onclick="nextQuestion(0);">Nie zgadzam
-				się</button>
-		</div>
-		<canvas width="743" height="791">
-			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
-					href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
-			</p>
-		</canvas>
-		<button class="btn btn-error" data-show="finish" onclick="rerender();">Kropki nie ma, zrenderuj jeszcze
-			raz</button>
-		<p id="shareURL">Udostępnij wynik - <span>{{ shareURL }}</span></p>
+		<h2>
+		<?php
+
+		$questions = [
+			"pzpla należy wywieźć na syberię",
+			"Telefony to zło",
+			"Spotify, YouTube Music, iTunes i inne platformy do odtwarzania muzyki to zło",
+			"DaVinci to kasztan",
+			"pzpl to kasztan",
+			"Producenci komputerów, laptopów itp. powinni mieć prawo bloatować systemy",
+			"Można kupować dyski 5tb do prac domowych",
+			"Śluby dla homoseksualnych kasztanów powinny być dostępne",
+			"EnderK ma prawo streamować ze sklepu",
+			"Czy kasztanos to najlepszy system?",
+			"Albicla to dobro",
+			"Sieciuchy są dobre, a sieciaki złe",
+			"Sieciaki powinny mieszkać pod wodą w australii",
+			"h to najlepsza litera",
+			"Za zabijanie chickenów powinno się karać",
+			"Powinno się zabronić pisania \"wirusów\" w batchu"
+		];
+
+		$odpowiedzi = str_split($_GET["a"]);
+
+		foreach ($odpowiedzi as $key => $value) {
+			if ($value == "1") {
+				echo "<br>" . $questions[$key] . " - Zgadzam się.";
+			} else if ($value == "0") {
+				echo "<br>" . $questions[$key] . " - Nie zgadzam się.";
+			} else {
+				echo "<br>" . $questions[$key] . " - Nie mam opinii.";
+			}
+		}
+
+		?>
+		</h2>
 	</main>
-	<img src="./dot.png" alt="kropka" decoding="async" style="opacity: 0;" aria-hidden="true"><br><br>
 	<footer>
-		<button class="btn btn-info" onclick="toggleDarkMode();">Ciemny motyw aby oczy nie umierały</button><br><br>
-		Uwaga, test powstał w celach humorystycznych i nie ma na celu nikogo obrazić.<br><br>
+		<button class="btn btn-info" onclick="toggleDarkMode();">Ciemny motyw aby oczy nie umierały</button><br>
 		By <a href="https://programistazpolski.ct8.pl/pl/?projekt=kasztanPolitics" target="_blank"
 			rel="noopener noreferrer" title="Zatrudnij mnie za darmo pls">pzpl</a>, made for Kasztan Space - Innovation that excites
 	</footer>
 	<script src="./js/plugins.js" defer></script>
-	<script src="./js/script.js" defer></script>
 	<script src='https://js.sentry-cdn.com/dbc6ff808762477f924289c757e08dff.min.js' crossorigin="anonymous"
 		defer></script>
 </body>

@@ -1260,14 +1260,10 @@ table thead {
 	border-color: #47494d;
 }
 
-canvas {
-	display: none;
-}
-
 #questions {
 	will-change: contents; /* omijanie tzw. layout trashingu - wincyj fps */
 }
 
-[data-show] {
+[data-show], p, canvas {
 	display: none;
 }
