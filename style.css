@@ -1264,6 +1264,6 @@ table thead {
 	will-change: contents; /* omijanie tzw. layout trashingu - wincyj fps */
 }
 
-[data-show], p, canvas {
+[data-show], #shareURL, canvas {
 	display: none;
 }

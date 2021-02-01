@@ -81,7 +81,7 @@ const pytania = [
 		"authright": 0.6,
 		"authleft": 0.4,
 		"center": 0.1
-	},
+	}*/
 	{
 		"name": "liskqu powinien mieć prawo do wkurzania swoich sąsiadów?",
 		"libleft": 0.3,
@@ -91,7 +91,7 @@ const pytania = [
 		"center": 0
 		// https://youtu.be/Xi-S7ou6W6Y
 		// btw czemu w kod patrzysz
-	},*/
+	},
 	{
 		"name": "EnderK ma prawo streamować ze sklepu",
 		"libleft": 0.5,
@@ -163,20 +163,30 @@ const pytania = [
 		"authright": 0.8,
 		"authleft": 1,
 		"center": 0.5
+	},
+	{
+		"name": "Apple to zło",
+		"libleft": 0,
+		"libright": 0,
+		"authright": 1,
+		"authleft": 1,
+		"center": 0.1
 	}
 ];
 
-let state = {
+let state = { /* zmienna od przechowywania informacji o stanie gry */
 	"question": 0,
 	"libleft": 0,
 	"libright": 0,
 	"authleft": 0,
 	"authright": 0,
 	"center": 0,
-	"anwsers": []
+	"anwsers": [] /* żeby potem link generować */
 };
 
 function start() {
+	document.title = `Kasztan Politics - ${pytania[state.question].name}`;
+	history.pushState({ "currentstate": state }, "Kasztan Politics", pytania[state.question].name);
 	h("#questions h2").text(pytania[state.question].name);
 };
 
@@ -204,6 +214,8 @@ function nextQuestion(obj) {
 	if (pytania[state.question]) {
 		// gra dalej
 		h("#questions h2").text(pytania[state.question].name);
+		document.title = `Kasztan Politics - ${pytania[state.question].name}`;
+		history.pushState({ "currentstate": state }, "Kasztan Politics", pytania[state.question].name);
 	} else {
 		// koniec gry
 		h("#questions h2").text(`Wynik: ${Math.round(state.libleft)} Libleft, ${Math.round(state.libright)} libright
@@ -219,6 +231,7 @@ function nextQuestion(obj) {
 		let wynik2 = (Math.round(state.authright) + Math.round(state.libright)) - (Math.round(state.libleft) + Math.round(state.libright));
 		wynik1 -= Math.round(state.center / 5);
 		wynik2 -= Math.round(state.center / 5);
+		/* zabezpieczenie antyradykałowe */
 		if (258 + (wynik2 * 65) > 510 || 278 + (wynik1 * 65) > 510) {
 			h(".alert").css("display", "block");
 			render(510, 510);
@@ -226,12 +239,15 @@ function nextQuestion(obj) {
 			h(".alert").css("display", "block");
 			render(-510, -510);
 		} else {
+			// * 65 works ok now, ale w za każdym razem kiedy dodajemy pytanie to musimy to zmniejszyć
 			render(258 + (wynik2 * 65), 278 + (wynik1 * 65));
 		}
 	};
 };
 
 function rerender() {
+	// ! Deprecated method
+	// TODO: usunąć to
 	let canv = h("canvas").getEl();
 	let ctx = canv.getContext("2d");
 	let wynik1 = (Math.round(state.libleft) + Math.round(state.libright)) - (Math.round(state.authright) + Math.round(state.authleft));
@@ -261,5 +277,11 @@ function render(val1, val2) {
 };
 
 window.onload = start;
+
+window.addEventListener('popstate', (e) => {
+	// Cofanie odpowiedzi
+	state = e.state.currentstate; // TODO: Zmienić nazwę zmiennej z currentstate na coś lepszego
+	h("#questions h2").text(pytania[state.question].name);
+});
 
 h("h1").on("click", () => { window.location.reload(); });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pl" dir="ltr">
 
 <head>
 	<meta charset="UTF-8">
@@ -38,7 +38,7 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<header>
-		<h1 class="d2 anim-hover-grow">Kasztan Politics <span class="badge badge-normal">Feature Test 1</span></h1>
+		<h1 class="d2 anim-hover-grow">Kasztan Politics <span class="badge badge-normal">Feature Test 2</span></h1>
 	</header>
 	<main>
 		<h2>
@@ -53,6 +53,7 @@
 			"Producenci komputerów, laptopów itp. powinni mieć prawo bloatować systemy",
 			"Można kupować dyski 5tb do prac domowych",
 			"Śluby dla homoseksualnych kasztanów powinny być dostępne",
+			"liskqu powinien mieć prawo do wkurzania swoich sąsiadów?",
 			"EnderK ma prawo streamować ze sklepu",
 			"Czy kasztanos to najlepszy system?",
 			"Albicla to dobro",
@@ -60,10 +61,17 @@
 			"Sieciaki powinny mieszkać pod wodą w australii",
 			"h to najlepsza litera",
 			"Za zabijanie chickenów powinno się karać",
-			"Powinno się zabronić pisania \"wirusów\" w batchu"
+			"Powinno się zabronić pisania \"wirusów\" w batchu",
+			"Władza na serwerze EnderK House powinna być sprawowana przez The Vision, a EnderK powinien być tylko maskotką",
+			"Apple to zło"
 		];
 
 		$odpowiedzi = str_split($_GET["a"]);
+
+		if (sizeof($odpowiedzi) != sizeof($questions)) {
+			echo "Error! Nieprawidłowy link";
+			die();
+		}
 
 		foreach ($odpowiedzi as $key => $value) {
 			if ($value == "1") {
