@@ -305,4 +305,4 @@ window.addEventListener('popstate', (e) => {
 	h("#questions h2").text(pytania[state.question].name);
 });
 
-h("h1").on("click", () => { window.location.reload(); });
+h("h1").on("click", () => { window.location = "http://kasztan.space/kasztanpolitics/"; });
