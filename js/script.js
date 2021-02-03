@@ -303,6 +303,11 @@ window.addEventListener('popstate', (e) => {
 	// Cofanie odpowiedzi
 	state = e.state.currentstate; // TODO: Zmienić nazwę zmiennej z currentstate na coś lepszego
 	h("#questions h2").text(pytania[state.question].name);
+	let wynik1 = (Math.round(state.libleft) + Math.round(state.libright)) - (Math.round(state.authright) + Math.round(state.authleft));
+	let wynik2 = (Math.round(state.authright) + Math.round(state.libright)) - (Math.round(state.libleft) + Math.round(state.libright));
+	wynik1 -= Math.round(state.center / 5);
+	wynik2 -= Math.round(state.center / 5);
+	render(258 + (wynik2 * 65), 278 + (wynik1 * 65));
 });
 
 h("h1").on("click", () => { window.location = "http://kasztan.space/kasztanpolitics/"; });
