@@ -171,6 +171,22 @@ const pytania = [
 		"authright": 1,
 		"authleft": 1,
 		"center": 0.1
+	},
+	{
+		"name": "c# & JS > C++ & Python",
+		"libleft": 0,
+		"libright": 0,
+		"authright": 0.1,
+		"authleft": 0,
+		"center": 1
+	},
+	{
+		"name": "Makra Huawei powinna istnieć",
+		"libleft": 0.1,
+		"libright": 0.8,
+		"authright": 0.5,
+		"authleft": 0,
+		"center": 0
 	}
 ];
 
@@ -274,6 +290,11 @@ function render(val1, val2) {
 	};
 
 	img1.src = "./compass.svg";
+};
+
+function copyLink() {
+	clippy('#shareURL span');
+	document.querySelector("#shareURL button").innerText = 'Skopiowano!';
 };
 
 window.onload = start;

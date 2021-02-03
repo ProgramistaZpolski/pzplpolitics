@@ -38,7 +38,7 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<header>
-		<h1 class="d2 anim-hover-grow">Kasztan Politics <span class="badge badge-normal">Feature Test 2</span></h1>
+		<h1 class="d2 anim-hover-grow">Kasztan Politics</h1>
 	</header>
 	<main>
 		<div class="alert alert-error text-dark">
@@ -66,7 +66,7 @@
 		</canvas>
 		<button class="btn btn-error" data-show="finish" onclick="rerender();">Kropki nie ma, zrenderuj jeszcze
 			raz</button>
-		<p id="shareURL">Udostępnij wynik - <span>{{ shareURL }}</span></p>
+		<p id="shareURL">Udostępnij wynik - <span>{{ shareURL }}</span> <button class="btn btn-normal" onclick="copyLink();">Kopiuj</button></p>
 	</main>
 	<img src="./dot.png" alt="kropka" decoding="async" style="opacity: 0;" aria-hidden="true"><br><br>
 	<footer>

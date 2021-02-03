@@ -178,25 +178,40 @@ let hQuery = function (selector) {
 const h = hQuery;
 
 document.onkeyup = function (e) {
-    if (e.shiftKey && e.key == "D") {
-        document.body.classList.toggle("dark-mode");
-        if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("pzplUI_mode", "dark");
-        } else {
-            localStorage.setItem("pzplUI_mode", "light");
-        }
-    };
+	if (e.shiftKey && e.key == "D") {
+		document.body.classList.toggle("dark-mode");
+		if (document.body.classList.contains("dark-mode")) {
+			localStorage.setItem("pzplUI_mode", "dark");
+		} else {
+			localStorage.setItem("pzplUI_mode", "light");
+		}
+	};
 };
 
 if (localStorage.getItem("pzplUI_mode") == "dark") {
-    document.body.classList.add("dark-mode");
+	document.body.classList.add("dark-mode");
 };
 
 function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("pzplUI_mode", "dark");
-    } else {
-        localStorage.setItem("pzplUI_mode", "light");
-    }
+	document.body.classList.toggle("dark-mode");
+	if (document.body.classList.contains("dark-mode")) {
+		localStorage.setItem("pzplUI_mode", "dark");
+	} else {
+		localStorage.setItem("pzplUI_mode", "light");
+	}
+};
+
+function clippy(selector) {
+	let text;
+	let elem = document.querySelector(selector);
+	if (elem.hasAttribute("data-clippy")) {
+		text = elem.getAttribute("data-clippy");
+	} else {
+		text = elem.innerText;
+	};
+	document.body.innerHTML += `<input type="text" id="clippy-temp" value="${text}" style="width: 0px; height: 0px;">`;
+	let h = document.querySelector("#clippy-temp");
+	h.select();
+	document.execCommand("copy");
+	h.remove();
 };

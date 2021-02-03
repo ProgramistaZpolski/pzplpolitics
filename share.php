@@ -38,7 +38,7 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<header>
-		<h1 class="d2 anim-hover-grow">Kasztan Politics <span class="badge badge-normal">Feature Test 2</span></h1>
+		<h1 class="d2 anim-hover-grow">Kasztan Politics</h1>
 	</header>
 	<main>
 		<h2>
@@ -63,7 +63,9 @@
 			"Za zabijanie chickenów powinno się karać",
 			"Powinno się zabronić pisania \"wirusów\" w batchu",
 			"Władza na serwerze EnderK House powinna być sprawowana przez The Vision, a EnderK powinien być tylko maskotką",
-			"Apple to zło"
+			"Apple to zło",
+			"c# & JS > C++ & Python",
+			"Makra Huawei powinna istnieć"
 		];
 
 		$odpowiedzi = str_split($_GET["a"]);
