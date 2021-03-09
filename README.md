@@ -1,4 +1,6 @@
 # kasztanpolitics
-Kasztan Politika Beta
+Kasztan Politika
 
 najlepszy i najnowszy test polityczny
+
+Będzie updatowany
