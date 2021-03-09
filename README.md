@@ -1,5 +1,5 @@
-# kasztanpolitics
-Kasztan Politika
+# pzplpolitics
+fork Kasztan Politika
 
 najlepszy i najnowszy test polityczny
 
