@@ -257,7 +257,7 @@ function nextQuestion(obj) {
 		} else {
 			// * 65 works ok now, ale w za każdym razem kiedy dodajemy pytanie to musimy to zmniejszyć
 			render(258 + (wynik2 * 65), 278 + (wynik1 * 65));
-		}
+		};
 	};
 };
 
