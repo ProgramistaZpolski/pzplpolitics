@@ -38,7 +38,7 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<header>
-		<h1 class="d2 anim-hover-grow">Kasztan Politics</h1>
+		<h1 class="d2 anim-hover-grow">pzpl Politics</h1>
 	</header>
 	<main>
 		<div class="alert alert-error text-dark">
