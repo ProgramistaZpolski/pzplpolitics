@@ -1,9 +1,7 @@
 # pzplpolitics
-fork Kasztan Politika
+fork [Kasztan Politika](https://github.com/Kasztan-Corporation/kasztanpolitics)
 
-najlepszy i najnowszy test polityczny
-
-Będzie updatowany
+najnowszy test polityczny
 
 Plany:
 - Bugfixy,
