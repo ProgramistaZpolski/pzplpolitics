@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" dir="ltr">
+<html lang="pl" dir="ltr" data-sieciuchy="./sieciuchy.txt">
 
 <head>
 	<meta charset="UTF-8">
