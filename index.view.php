@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" dir="ltr">
+<html lang="pl" dir="ltr" data-sieciuchy="./sieciuchy.txt">
 
 <head>
 	<meta charset="UTF-8">
@@ -38,7 +38,7 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<header>
-		<h1 class="d2 anim-hover-grow">Kasztan Politics</h1>
+		<h1 class="d2 anim-hover-grow">pzpl Politics</h1>
 	</header>
 	<main>
 		<div class="alert alert-error text-dark">
@@ -73,7 +73,7 @@
 		<button class="btn btn-info" onclick="toggleDarkMode();">Ciemny motyw aby oczy nie umierały</button><br><br>
 		Uwaga, test powstał w celach humorystycznych i nie ma na celu nikogo obrazić.<br><br>
 		By <a href="https://programistazpolski.ct8.pl/pl/?projekt=kasztanPolitics" target="_blank"
-			rel="noopener noreferrer" title="Zatrudnij mnie za darmo pls">pzpl</a>, made for Kasztan Space - Innovation that excites
+			rel="noopener noreferrer" title="Zatrudnij mnie za darmo pls">pzpl</a> <?= $year ?> , made originally for Kasztan Space - Innovation that excites
 	</footer>
 	<script src="./js/plugins.js" defer></script>
 	<script src="./js/script.js" defer></script>
