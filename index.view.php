@@ -73,7 +73,7 @@
 		<button class="btn btn-info" onclick="toggleDarkMode();">Ciemny motyw aby oczy nie umierały</button><br><br>
 		Uwaga, test powstał w celach humorystycznych i nie ma na celu nikogo obrazić.<br><br>
 		By <a href="https://programistazpolski.ct8.pl/pl/?projekt=kasztanPolitics" target="_blank"
-			rel="noopener noreferrer" title="Zatrudnij mnie za darmo pls">pzpl</a>, made for Kasztan Space - Innovation that excites
+			rel="noopener noreferrer" title="Zatrudnij mnie za darmo pls">pzpl</a> <?= $year ?> , made originally for Kasztan Space - Innovation that excites
 	</footer>
 	<script src="./js/plugins.js" defer></script>
 	<script src="./js/script.js" defer></script>
